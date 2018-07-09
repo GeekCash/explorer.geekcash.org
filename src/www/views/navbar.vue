@@ -27,7 +27,7 @@
                                     <form class="form-inline">
                                         <input class="form-control" id="navSearch" type="search" placeholder="You may enter a block height, block hash, tx hash or address."
                                             aria-label="Search">
-                                        <button type="submit" class="btn btn-success navbutton">
+                                        <button type="submit" class="btn navbutton">
                                             <i class="fa fa-search" aria-hidden="true"></i>
                                         </button>
                                     </form>

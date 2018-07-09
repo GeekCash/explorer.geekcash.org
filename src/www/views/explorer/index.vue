@@ -272,8 +272,19 @@
                 </div>
 
             </div>
+            
 
 
         </div>
     </div>
 </template>
+
+<script>
+import api from "../../api";
+import MixTable from "v-mix-table";
+import { mapGetters } from "vuex";
+export default {
+   
+
+};
+</script>

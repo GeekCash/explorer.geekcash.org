@@ -18,10 +18,16 @@ body {
 #navSearch {
   width: 400px;
   border-radius: 0;
+  color: #f0f0f5;
+  background-color: #1f1f2d;
+  border: .5px solid #3f3f5a;
 }
 
 .navbutton {
   border-radius: 0;
+  color: #d2d2e0;
+  background-color: #3f3f5a;
+  border: .5px solid #3f3f5a;
 }
 
 .site-footer {
@@ -55,7 +61,7 @@ body {
 }
 
 .site-menubar-light .site-menu-item a {
-  color: rgb(255, 255, 255);
+  color: #d2d2e0;
 }
 
 .site-navbar .navbar-header .navbar-brand-logo {
@@ -86,7 +92,8 @@ a:link {
 }
 
 .label {
-  color: #ffffff;
+  color: #f0f0f5;
+  font-size: 18px !important;
 }
 
 .site-menu-icon {
@@ -146,7 +153,7 @@ a:link {
 }
 
 .table {
-  color: #d3d3e0;
+  color: #d2d2e0;
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) {
@@ -181,4 +188,28 @@ a:link {
 .dataTables_info {
   color: #d3d3e0;
   padding: 0px 25px;
+}
+
+.page-link:hover {
+  color: #d2d2e0;
+  background-color: #2a2a3d;
+  border-color: #161620;
+}
+
+.page-item.active .page-link {
+  color: #d2d2e0;
+  background-color: #1e1f2c;
+  border-color: #35354c;
+}
+
+.pagination>li>a, .pagination>li>span {
+  background-color: #35354c;
+}
+
+.page-item.disabled .page-link {
+  color: inherit;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #262637;
+  border-color: transparent;
 }

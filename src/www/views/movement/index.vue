@@ -21,7 +21,7 @@
                             <h3 class="panel-title">Difficulty</h3>
                         </div>
                         <div class="panel-body">
-                            <span class="label font-weight-400">91.86713539442127</span>
+                            <span class="label  font-weight-400">91.86713539442127</span>
                         </div>
                     </div>
                 </div>
