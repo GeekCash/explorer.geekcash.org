@@ -17,6 +17,3 @@ export default {
     return API.delete(url, data);
   }
 };
-
-
-

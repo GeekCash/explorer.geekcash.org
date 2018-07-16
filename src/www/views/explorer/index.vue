@@ -1,6 +1,8 @@
+
 <template>
     <div class="page">
         <div class="page-content container-fluid">
+
             <div class="row">
                 <!-- First Row -->
                 <div class="col-xl-3 col-md-6 info-panel">
@@ -10,7 +12,7 @@
                             <h3 class="panel-title">Network (MH/s)</h3>
                         </div>
                         <div class="panel-body">
-                            <span class="label font-weight-400">6421.8892</span>
+                            <span class="label font-weight-400">94hz</span>
                         </div>
                     </div>
                 </div>
@@ -48,243 +50,64 @@
             </div>
 
             <div class="panel">
-                <header class="panel-heading">
-                    <div class="panel-actions"></div>
-                    <h3 class="panel-title">Latest Transactions</h3>
-                </header>
+                    <header class="panel-heading">
+                        <div class="panel-actions"></div>
+                        <h3 class="panel-title">Latest Transactions</h3>
+                    </header>
+                    <div class="panel-body">
+                            <mix-table :data="data" css="table table-hover table-striped table-bordered text-center" ref="mixtable" @mixtable:fetch="tfetch" :limit=15>
+                              
+                                <mix-table-column data-field="idx" label="Block" type="slot" target="block" class="text-center" width="111px"></mix-table-column>
+                                <mix-table-column data-field="_id" label="Hash" type="slot" target="Hash" class="text-center" width="707px" ></mix-table-column>
+                                <mix-table-column label="Recipients" type="slot"  class="text-center" width="75px" target="Recipients"></mix-table-column>
+                                <mix-table-column data-field="val" label="Amount (GEEK)" type="slot" target="val"  class="text-center" width="249px"></mix-table-column>
+                                <mix-table-column data-field="tt" label="Timestamp" type="slot" target="time" class="text-center" width="442px"></mix-table-column>
 
-                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <table id="recent-table" class="table table-hover table-bordered dataTable table-striped w-full dtr-inline" data-plugin="dataTable"
-                                role="grid" aria-describedby="DataTables_Table_0_info" style="width: 1611px;">
-                                <thead>
-                                    <tr role="row">
-                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 111px;"
-                                            aria-sort="ascending" aria-label="Name: activate to sort column descending">Block</th>
-                                        <th class="sorting text-center" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 707px;"
-                                            aria-label="Position: activate to sort column ascending">Hash</th>
-                                        <th class="sorting text-center" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 75px;"
-                                            aria-label="Office: activate to sort column ascending">Recipients</th>
-                                        <th class="sorting text-center" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 242px;"
-                                            aria-label="Age: activate to sort column ascending">Amount (GEEK)</th>
-                                        <th class="sorting text-center" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 430px;"
-                                            aria-label="Date: activate to sort column ascending">Timestamp</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center">
+                                <template slot="block" slot-scope="props">
+                                    <a :href="'/block/'+ props.row.bid">{{props.value}}</a>
+                                </template>
 
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
+                                <template slot="Hash" slot-scope="props">
+                                    <a target="_blank" :href="'/tx/'+ props.row._id">{{props.value}}</a>
+                                </template>
+                   
+                                <template slot="Recipients" slot-scope="props">
+                                    <span>{{props.row.idx}}</span>
+                                </template>
 
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
+                                <template slot="val" slot-scope="props">{{props.value}}</template>
 
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
+                                <template  slot="time" slot-scope="props">
+                                    <span class="text-center">{{timestamp(props.value)}}</span>
+                                </template>
+                            </mix-table>
 
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
-
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
-
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td>
-                                            <a href="/block/0000000000680357f6ce0f1e5bc5dae47663d06dd0b31f13ecec13fe7537bd0d">77366</a>
-                                        </td>
-                                        <td>
-                                            <a href="/tx/97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023">97286f187330ed4481ffd450a5a6f1324d55c740ec5737ecc4960a7e8a4e4023</a>
-                                        </td>
-                                        <td>1</td>
-                                        <td>2794.86458333</td>
-                                        <td>Wed, 04 Jul 2018 08:08:29 GMT</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-5">
-                            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 100 entries</div>
-                        </div>
-                        <div class="col-sm-12 col-md-7">
-                            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                                <ul class="pagination">
-                                    <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-                                    </li>
-                                    <li class="paginate_button page-item active">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">5</a>
-                                    </li>
-                                    <li class="paginate_button page-item next" id="DataTables_Table_0_next">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">Next</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-            
-
-
         </div>
     </div>
 </template>
 
 <script>
-import api from "../../api";
-import MixTable from "v-mix-table";
-import { mapGetters } from "vuex";
-export default {
-   
+    import moment from 'moment';
+    import MixTable from "v-mix-table";
+    import { mapGetters } from "vuex";
 
-};
+    export default {
+
+        computed: {
+            ...mapGetters({
+                data: "tx",
+            })
+        },
+        methods: {
+            tfetch(params) { 
+                this.$store.dispatch("TX_FETCH", params);
+            },
+            timestamp(val){
+                 return  moment.unix(val).format('ddd ,DD MMM YYYY HH:mm:ss'); 
+            }
+        },
+        
+    };
 </script>

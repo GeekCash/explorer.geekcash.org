@@ -53,171 +53,174 @@
                     <div class="panel-actions"></div>
                     <h3 class="panel-title">Connections</h3>
                 </header>
-
-                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <table id="recent-table" class="table table-hover table-bordered dataTable table-striped w-full dtr-inline" data-plugin="dataTable"
-                                role="grid" aria-describedby="DataTables_Table_0_info" style="width: 1611px;">
-                                <thead>
-                                    <tr role="row">
-                                        <th class="sorting_asc text-center" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 25%;"
-                                            aria-sort="ascending" aria-label="Name: activate to sort column descending">Address</th>
-                                        <th class="sorting text-center" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 25%;"
-                                            aria-label="Position: activate to sort column ascending">Protocol</th>
-                                        <th class="sorting text-center" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 25%;"
-                                            aria-label="Office: activate to sort column ascending">Sub-version</th>
-                                        <th class="sorting text-center" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 25%;"
-                                            aria-label="Age: activate to sort column ascending">Country</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center">
-
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
-                                    <tr role="row" class="odd">
-                                        <td> 159.65.3.151</td>
-                                        <td>70208</td>
-                                        <td>GeekCash:1.0.1.2</td>
-                                        <td>Singapore</td>
-                                    </tr>
+                <div id="lastBlockTableDiv" class="panel-body scrollTable">
+                    <div class="mix-table-container">
+                        <table class="mix-table table table-hover table-striped table-bordered text-center">
+                            <thead>
+                                <tr>
+                                    <th title="Click to sort" style="width: 25%;" class="text-center">
+                                        <div class="mix-table-column">
+                                            <span>Address</span>
+                                            <span class="mix-table-sort-arrow" style="display: none;"></span>
+                                        </div>
+                                    </th>
+                                    <th title="Click to sort" style="width: 25%;" class="text-center">
+                                        <div class="mix-table-column">
+                                            <span>Protocol</span>
+                                            <span class="mix-table-sort-arrow" style="display: none;"></span>
+                                        </div>
+                                    </th>
+                                    <th title="Click to sort" style="width: 25%;" class="text-center">
+                                        <div class="mix-table-column">
+                                            <span>Sub-version</span>
+                                            <span class="mix-table-sort-arrow" style="display: none;"></span>
+                                        </div>
+                                    </th>
+                                    <th title="Click to sort" style="width: 25%;" class="text-center">
+                                        <div class="mix-table-column">
+                                            <span>Country</span>
+                                            <span class="mix-table-sort-arrow" style="display: none;"></span>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
+                                <tr>
+                                    <td class="mix-table-cell">159.65.3.151</td>
+                                    <td class="mix-table-cell">70208</td>
+                                    <td class="mix-table-cell">GeekCash:1.0.1.2</td>
+                                    <td class="mix-table-cell">Singapore</td>
+                                </tr>
 
 
-
-
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-5">
-                            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 100 entries</div>
-                        </div>
-                        <div class="col-sm-12 col-md-7">
-                            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                                <ul class="pagination">
-                                    <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-                                    </li>
-                                    <li class="paginate_button page-item active">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" class="page-link">2</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" class="page-link">3</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0" class="page-link">4</a>
-                                    </li>
-                                    <li class="paginate_button page-item ">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0" class="page-link">5</a>
-                                    </li>
-                                    <li class="paginate_button page-item next" id="DataTables_Table_0_next">
-                                        <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0" class="page-link">Next</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            </tbody>
+                        </table>
+                        <div class="mix-table-footer clearfix">
+                            <ul class="pagination pagination-gap">
+                                <li class="page-item disabled">
+                                    <a href="javascript:void(0)" aria-label="First" class="page-link">
+                                        <i aria-hidden="true" class="fa fa-angle-double-left"></i>
+                                        <span class="sr-only">(empty)</span>
+                                    </a>
+                                </li>
+                                <li class="page-item disabled">
+                                    <a href="javascript:void(0)" aria-label="Previous" class="page-link">
+                                        <i aria-hidden="true" class="fa fa-angle-left"></i>
+                                        <span class="sr-only">(empty)</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active">
+                                    <a href="javascript:void(0)" class="page-link">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript:void(0)" class="page-link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript:void(0)" class="page-link">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript:void(0)" class="page-link">4</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript:void(0)" class="page-link">5</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript:void(0)" class="page-link">6</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript:void(0)" class="page-link">7</a>
+                                </li>
+                                <li class="disabled page-item">
+                                    <a href="javascript:void(0)" class="page-link">...</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript:void(0)" aria-label="Next" class="page-link">
+                                        <i aria-hidden="true" class="fa fa-angle-right"></i>
+                                        <span class="sr-only">(empty)</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript:void(0)" aria-label="Last" class="page-link">
+                                        <i aria-hidden="true" class="fa fa-angle-double-right"></i>
+                                        <span class="sr-only">(empty)</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
             </div>
 
 

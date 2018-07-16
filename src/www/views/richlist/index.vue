@@ -265,10 +265,23 @@
                         </table>
                     </div>
 
+                    <pie-chart  :dataset="{borderColor: '#161620', borderWidth: 2}" :data="chartData" :colors="['#d9534f','#5cb85c','#428bca', '#222']"></pie-chart>
                 </div>
+
             </div>
         </div>
     </div>
     <!-- End Page -->
 
 </template>
+
+<script>
+export default {
+
+ data() { 
+       return {
+         chartData:[[" Top 1-25", 59.92], [" Top 26-50", 9.36], [" Top 51-75", 6.4], [" Top 76-100", 3.84]],
+       }
+    }
+ };
+</script>

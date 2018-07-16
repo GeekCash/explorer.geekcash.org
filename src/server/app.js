@@ -21,7 +21,7 @@ require('./cluster')('app', () => {
     await server.start();
 
     //global.db = await mongoose.connect(config.db, { promiseLibrary: global.Promise });
-    global.db = mongoose.connect(config.db);
+    // global.db = mongoose.connect(config.db);
 
     console.log("Worker %s started and running at: %s", process.pid, server.info.uri);
   })();

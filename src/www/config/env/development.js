@@ -1,3 +1,3 @@
 export default{
-    BASE_API_URL: "http://localhost:8080"
-}
+    BASE_API_URL: "https://api.geekcash.org/"
+  }

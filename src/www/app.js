@@ -7,11 +7,18 @@ import router from "./router";
 import { sync } from "vuex-router-sync";
 import Validate from "vee-validate";
 import NoSSR from "vue-no-ssr";
+import NProgress from 'vue-nprogress';
 
+import VueChartkick from 'vue-chartkick'
+import Chart from 'chart.js'
+
+Vue.use(VueChartkick, {adapter: Chart})
 
 Vue.use(Validate);
+Vue.use(NProgress);
 
 Vue.component('no-ssr', NoSSR);
+const nprogress = new NProgress();
 
 // sync the router with the vuex store.
 // this registers `store.state.route`
@@ -22,6 +29,7 @@ sync(store, router);
 // making them available everywhere as `this.$router` and `this.$store`.
 
 const app = new Vue({
+  nprogress,
   router,
   store,
   render: h => h(App)

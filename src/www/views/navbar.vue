@@ -43,34 +43,34 @@
             <div class="site-menubar-body">
                 <ul class="site-menu" data-plugin="menu">
                     <li class="site-menu-item">
-                        <a href="/" class="">
+                        <router-link to="/" class="nav-link">
                             <i aria-hidden="true" class="fa fa-search site-menu-icon"></i>
                             <span class="site-menu-title">Explorer</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="site-menu-item">
-                        <a href="/movement" class="">
+                        <router-link to="/movement" class="nav-link">
                             <i aria-hidden="true" class="fa fa-money site-menu-icon"></i>
                             <span class="site-menu-title">Movement</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="site-menu-item">
-                        <a href="/network" class="">
+                        <router-link to="/network" class="nav-link">
                             <i aria-hidden="true" class="fa fa-share-alt site-menu-icon"></i>
                             <span class="site-menu-title">Network</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="site-menu-item">
-                        <a href="/richlist" class="">
+                        <router-link to="/richlist" class="nav-link">
                             <i aria-hidden="true" class="fa fa-btc site-menu-icon"></i>
                             <span class="site-menu-title">Top 100</span>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="site-menu-item">
-                        <a href="/info" class="">
+                        <router-link to="/info" class="nav-link">
                             <i aria-hidden="true" class="fa fa-info site-menu-icon"></i>
                             <span class="site-menu-title">API</span>
-                        </a>
+                        </router-link>
                     </li>
                 </ul>
             </div>
