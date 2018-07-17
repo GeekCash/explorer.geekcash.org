@@ -3,93 +3,55 @@
     <!-- Page -->
     <div class="page">
         <div class="page-content container-fluid">
-            <div class="row">
-                <!-- First Row -->
-                <div class="col-xl-3 col-md-6 info-panel">
-
-                    <div class="panel text-center">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Network (MH/s)</h3>
-                        </div>
-                        <div class="panel-body">
-                            <span class="label font-weight-400">6421.8892</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 info-panel">
-                    <div class="panel text-center">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Difficulty</h3>
-                        </div>
-                        <div class="panel-body">
-                            <span class="label font-weight-400">91.86713539442127</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 info-panel">
-                    <div class="panel text-center">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Coin Supply (GEEK)</h3>
-                        </div>
-                        <div class="panel-body">
-                            <span class="label font-weight-400">428754652.0485148</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 info-panel">
-                    <div class="panel text-center">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">BTC Price</h3>
-                        </div>
-                        <div class="panel-body">
-                            <span class="label font-weight-400">0.00000000</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- End First Row -->
-            </div>
-
-
+             <layout></layout>
             <div class="panel">
                 <div class="col-xs-12 col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="row">
-                                <a :href="'/block/'+ blkinfo.prv">
+                                <router-link :to="'/block/'+ blkinfo.prv" v-if="blkinfo.prv">
                                     <span class="fa fa-chevron-left iquidus block-last"></span>
-                                </a>
+                                </router-link >
                                 <strong class="hidden-xs">GEEK block: {{blkinfo._id}}</strong>
+                                <router-link  :to="'/block/' + blkinfo.nxt" v-if="blkinfo.nxt">
+                                    <span class="fa fa-chevron-right iquidus block-next"></span>
+                                </router-link>
+
                             </div>
                         </div>
+                        <div class="table-responsive">
                         <table class="table table-hover table-bordered dataTable table-striped w-full dtr-inline">
                             <thead>
                                 <tr>
-                                    <th>Height</th>
-                                    <th>Difficulty</th>
-                                    <th>Confirmations</th>
-                                    <th class="hidden-xs">Size (kB)</th>
-                                    <th class="hidden-xs">Bits</th>
-                                    <th class="hidden-xs">Nonce</th>
-                                    <th class="hidden-xs">Timestamp</th>
+                                    <th style="width: 130px">Height</th>
+                                    <th style="width: 350px">Difficulty</th>
+                                    <th style="width: 250px">Confirmations</th>
+                                    <th style="width: 180px">Size (kB)</th>
+                                    <th style="width: 180px">Bits</th>
+                                    <th style="width: 200px">Nonce</th>
+                                    <th >Timestamp</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="table-danger">
                                     <td>{{blkinfo.idx}}</td>
                                     <td>{{blkinfo.diff}}</td>
-                                    <td>2</td>
-                                    <td class="hidden-xs">{{blkinfo.sz}}</td>
-                                    <td class="hidden-xs">{{blkinfo.bits}}</td>
-                                    <td class="hidden-xs">{{blkinfo.n}}</td>
-                                    <td class="hidden-xs">{{timestamp(blkinfo.tt)}}</td>
+                                    <td>{{overview.blocks - blkinfo.idx}}</td>
+                                    <td>{{blkinfo.sz}}</td>
+                                    <td>{{blkinfo.bits}}</td>
+                                    <td>{{blkinfo.n}}</td>
+                                    <td>{{timestamp(blkinfo.tt)}}</td>
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
                     </div>
+
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <strong>Latest Transactions</strong>
                         </div>
+                        <div class="table-responsive">
                         <table class="table table-hover table-bordered dataTable table-striped w-full dtr-inline">
                             <thead>
                                 <tr>
@@ -100,20 +62,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr  v-if="datatx" v-for="tx in datatx.docs">
                                     <td class="hidden-xs">
-                                        <a href="/tx/09c67c91f6c5626a1713d52a17365d9a3d9dbf5d43d6e2153e561ef629d2e189">09c67c91f6c5626a1713d52a17365d9a3d9dbf5d43d6e2153e561ef629d2e189</a>
+                                        <router-link :to="'/tx/'+ tx._id">{{tx._id}}</router-link>
                                     </td>
-                                    <td>1</td>
-                                    <td>2784.66666666</td>
+                                    <td>{{tx.out.length}}</td>
+                                    <td>{{tx.val}}</td>
                                     <td class="text-center">
-                                        <a href="/tx/09c67c91f6c5626a1713d52a17365d9a3d9dbf5d43d6e2153e561ef629d2e189">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
+                                        <router-link :to="'/tx/' + tx._id">
+                                            <i class="fa fa-eye table-eye"></i>
+                                        </router-link>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
 
@@ -126,21 +89,26 @@
 
 <script>
     import moment from 'moment';
-    import {
-        mapGetters
-    } from "vuex";
+    import { mapGetters } from "vuex";
+    import Layout from "../layout.vue";
 
     export default {
-
+         components: {
+            "layout": Layout
+         },
         computed: {
             ...mapGetters({
-                blkinfo: "binfo"
+                blkinfo: "binfo",
+                overview: "overview",
+                datatx: "tx"
+
             })
         },
         methods: {
             blockinfo() {
                 if (this.$route.params.id) {
                     this.$store.dispatch("BLOCK_INFO", { id: this.$route.params.id });
+                    this.$store.dispatch("TX_FETCH", {search: this.$route.params.id});
                 }
             },
             timestamp(val) {

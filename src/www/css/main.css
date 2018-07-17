@@ -257,27 +257,49 @@ a:link {
   color: #fff;
   font-size: 20px;
 }
-
-.home {
-  background: #1b2b36;
-}
-
-.pool {
-  background: #006600;
-}
-
-.facebook {
-  background: #3B5998;
-}
-
-.twitter {
-  background: #55ACEE;
-}
-
-.linkedin, .telegram {
-  background: #007bb5;
-} 
-
 .block-last {
-  padding-right: 20px;
+  padding-right: 10px;
 }
+
+.block-next { 
+  padding-left: 1094px;
+}
+.table-eye {
+  padding-left: 25px;
+}
+
+@media (max-width: 767px) {
+  .main-nav .navbar-brand {
+      width: 100px;
+  }
+  .page {
+      -webkit-transition: 300ms ease;
+      transition: 300ms ease;
+  }
+  .site-menubar {
+      -webkit-transition: 300ms ease;
+      transition: 300ms ease;
+  }
+  .site-menubar-open {
+      -webkit-transform: translate3d(0, 0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-transition: 300ms ease;
+      transition: 300ms ease;
+  }
+  .page-menubar-open {
+      -webkit-transform: translate3d(130px, 0, 0);
+      -ms-transform: translate(130px, 0);
+      transform: translate3d(130px, 0, 0);
+      -webkit-transition: 300ms ease;
+      transition: 300ms ease;
+  }
+  .site-navbar.navbar-inverse .navbar-container {
+    background-color: #20202f;
+    height: 0px;
+  }
+  .mix-table-footer {
+    float: left;
+ }
+}
+

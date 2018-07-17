@@ -2,64 +2,14 @@
     <!-- Page -->
     <div class="page">
         <div class="page-content container-fluid">
-            <div class="row">
-                <!-- First Row -->
-                <div class="col-xl-3 col-md-6 info-panel">
 
-                    <div class="panel text-center">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Network (MH/s)</h3>
-                        </div>
-                        <div class="panel-body">
-                            <span class="label font-weight-400">6421.8892</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 info-panel">
-                    <div class="panel text-center">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Difficulty</h3>
-                        </div>
-                        <div class="panel-body">
-                            <span class="label font-weight-400">91.86713539442127</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 info-panel">
-                    <div class="panel text-center">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Coin Supply (GEEK)</h3>
-                        </div>
-                        <div class="panel-body">
-                            <span class="label font-weight-400">428754652.0485148</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 info-panel">
-                    <div class="panel text-center">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">BTC Price</h3>
-                        </div>
-                        <div class="panel-body">
-                            <span class="label font-weight-400">0.00000000</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- End First Row -->
-            </div>
+            <layout></layout>
+
             <div class="row">
                 <div class="col-md-8">
                     <!-- Example Tabs -->
                     <div class="example-wrap">
                         <div class="nav-tabs-horizontal" data-plugin="tabs">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" data-toggle="tab" href="#exampleTabsOne" aria-controls="exampleTabsOne" role="tab" aria-selected="true">Balance</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" data-toggle="tab" href="#exampleTabsTwo" aria-controls="exampleTabsTwo" role="tab" aria-selected="false">Received</a>
-                                </li>
-                            </ul>
                             <div class="tab-content pt-20">
                                 <div class="panel">
                                     <header class="panel-heading">
@@ -209,63 +159,66 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div id="summary-panel" style="margin-top:66px;" class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Wealth Distribution</h3>
+                    <div class="tab-content pt-20">
+                        <div class="panel">
+                            <header class="panel-heading">
+                                <div class="panel-actions"></div>
+                                <h3 class="panel-title">Wealth Distribution</h3>
+                            </header>
+                            <table class="table table-hover table-bordered dataTable table-striped w-full dtr-inline">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Amount (GEEK)</th>
+                                        <th class="text-center">%</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <div style="background-color:#d9534f;width:20px;height:20px;margin-right:6px;" class="pull-left"></div>
+                                            <span>Top 1-25</span>
+                                        </th>
+                                        <td>257130881.79648095</td>
+                                        <td class="text-center">59.92</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div style="background-color:#5cb85c;width:20px;height:20px;margin-right:6px;" class="pull-left"></div>
+                                            <span>Top 26-50</span>
+                                        </th>
+                                        <td>40176758.81707120</td>
+                                        <td class="text-center">9.36</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div style="background-color:#428bca;width:20px;height:20px;margin-right:6px;" class="pull-left"></div>
+                                            <span>Top 51-75</span>
+                                        </th>
+                                        <td>25927783.29273744</td>
+                                        <td class="text-center">6.04</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div style="background-color:#222;width:20px;height:20px;margin-right:6px;" class="pull-left"></div>
+                                            <span>Top 76-100</span>
+                                        </th>
+                                        <td>16469392.56999914</td>
+                                        <td class="text-center">3.84</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <span>Total</span>
+                                        </th>
+                                        <td></td>
+                                        <td class="text-center">96.16</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <table class="table table-hover table-bordered dataTable table-striped w-full dtr-inline">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Amount (GEEK)</th>
-                                    <th class="text-center">%</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>
-                                        <div style="background-color:#d9534f;width:20px;height:20px;margin-right:6px;" class="pull-left"></div>
-                                        <span>Top 1-25</span>
-                                    </th>
-                                    <td>257130881.79648095</td>
-                                    <td class="text-center">59.92</td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <div style="background-color:#5cb85c;width:20px;height:20px;margin-right:6px;" class="pull-left"></div>
-                                        <span>Top 26-50</span>
-                                    </th>
-                                    <td>40176758.81707120</td>
-                                    <td class="text-center">9.36</td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <div style="background-color:#428bca;width:20px;height:20px;margin-right:6px;" class="pull-left"></div>
-                                        <span>Top 51-75</span>
-                                    </th>
-                                    <td>25927783.29273744</td>
-                                    <td class="text-center">6.04</td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <div style="background-color:#222;width:20px;height:20px;margin-right:6px;" class="pull-left"></div>
-                                        <span>Top 76-100</span>
-                                    </th>
-                                    <td>16469392.56999914</td>
-                                    <td class="text-center">3.84</td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        <span>Total</span>
-                                    </th>
-                                    <td></td>
-                                    <td class="text-center">96.16</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
 
-                    <pie-chart  :dataset="{borderColor: '#161620', borderWidth: 2}" :data="chartData" :colors="['#d9534f','#5cb85c','#428bca', '#222']"></pie-chart>
+                    <pie-chart :dataset="{borderColor: '#161620', borderWidth: 2}" :data="chartData" :colors="['#d9534f','#5cb85c','#428bca', '#222']"></pie-chart>
                 </div>
 
             </div>
@@ -276,12 +229,20 @@
 </template>
 
 <script>
-export default {
-
- data() { 
-       return {
-         chartData:[[" Top 1-25", 59.92], [" Top 26-50", 9.36], [" Top 51-75", 6.4], [" Top 76-100", 3.84]],
-       }
-    }
- };
+    import Layout from "../layout.vue";
+    export default {
+        data() {
+            return {
+                chartData: [
+                    [" Top 1-25", 59.92],
+                    [" Top 26-50", 9.36],
+                    [" Top 51-75", 6.4],
+                    [" Top 76-100", 3.84]
+                ],
+            }
+        },
+        components: {
+            "layout": Layout
+        }
+    };
 </script>

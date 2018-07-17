@@ -9,9 +9,10 @@ import Validate from "vee-validate";
 import NoSSR from "vue-no-ssr";
 import NProgress from 'vue-nprogress';
 
-import VueChartkick from 'vue-chartkick'
-import Chart from 'chart.js'
-
+import VueChartkick from 'vue-chartkick';
+import Chart from 'chart.js';
+import Moment from 'vue-moment'
+Vue.use(Moment);
 Vue.use(VueChartkick, {adapter: Chart})
 
 Vue.use(Validate);

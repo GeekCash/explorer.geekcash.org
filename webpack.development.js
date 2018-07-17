@@ -6,6 +6,7 @@ var FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
 var { VueLoaderPlugin } = require('vue-loader')
 var nodeExternals = require('webpack-node-externals');
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var VueSSRClientPlugin = require("vue-server-renderer/client-plugin");
 // entry server
@@ -131,8 +132,14 @@ module.exports = function (env) {
           filename: 'www/server.json'
         }),
         new VueLoaderPlugin(),
-        new FriendlyErrorsPlugin()
-
+        new FriendlyErrorsPlugin(),
+        new CopyWebpackPlugin([
+          {
+            context: 'src/www/favicon',
+            from: '**/*',
+            to: './www/favicon'
+          }
+        ])
 
       ]
     },
@@ -312,15 +319,9 @@ module.exports = function (env) {
               entry: 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js'
             },
             {
-              module: 'datatables',
-              global: 'datatables',
-              entry: 'https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js'
-            },
-            {
 
               module: 'remark',
               entry: [
-                '//cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css',
                 '//l.allcdn.org/remark/v4.1/bootstrap.min.css',
                 '//l.allcdn.org/remark/v4.1/bootstrap-extend.min.css',
                 '//l.allcdn.org/remark/v4.1/site.min.css',

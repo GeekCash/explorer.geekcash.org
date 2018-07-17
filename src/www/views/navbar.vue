@@ -3,10 +3,12 @@
         <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse bg-indigo-600" role="navigation">
 
             <div class="navbar-header">
-                <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided" data-toggle="menubar">
+                <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left unfolded hided" data-toggle="menubar"
+                    v-on:click="toggleMenubar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="hamburger-bar"></span>
                 </button>
+
                 <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
                     <i class="icon wb-more-horizontal" aria-hidden="true"></i>
                 </button>
@@ -15,6 +17,8 @@
                         <img class="navbar-brand-logo" src="../favicon/logo-w.png" title="geekcash">
                     </a>
                 </div>
+
+
             </div>
 
             <div class="navbar-container container-fluid">
@@ -37,6 +41,7 @@
                     </div>
                 </div>
             </div>
+
         </nav>
 
         <div class="site-menubar site-menubar-light">
@@ -54,10 +59,18 @@
                             <span class="site-menu-title">Movement</span>
                         </router-link>
                     </li>
+
                     <li class="site-menu-item">
-                        <router-link to="/network" class="nav-link">
-                            <i aria-hidden="true" class="fa fa-share-alt site-menu-icon"></i>
-                            <span class="site-menu-title">Network</span>
+                        <router-link to="/wallets" class="nav-link">
+                            <i aria-hidden="true" class="fa fa-info site-menu-icon"></i>
+                            <span class="site-menu-title">Wallets</span>
+                        </router-link>
+                    </li>
+
+                    <li class="site-menu-item">
+                        <router-link to="/masternodes" class="nav-link">
+                            <i aria-hidden="true" class="fa fa-connectdevelop site-menu-icon"></i>
+                            <span class="site-menu-title">Masternodes</span>
                         </router-link>
                     </li>
                     <li class="site-menu-item">
@@ -66,15 +79,42 @@
                             <span class="site-menu-title">Top 100</span>
                         </router-link>
                     </li>
-                    <li class="site-menu-item">
-                        <router-link to="/info" class="nav-link">
-                            <i aria-hidden="true" class="fa fa-info site-menu-icon"></i>
-                            <span class="site-menu-title">API</span>
-                        </router-link>
-                    </li>
+  
                 </ul>
             </div>
         </div>
 
     </div>
 </template>
+
+<script>
+    export default {
+        methods: {
+            toggleMenubar() {
+                this.menubarOpen = !this.menubarOpen;
+                if (this.menubarOpen) {
+                    $(".page")
+                        .last()
+                        .addClass("page-menubar-open");
+                    $(".site-menubar")
+                        .last()
+                        .addClass("site-menubar-open");
+                    $(".hamburger-close")
+                        .last()
+                        .removeClass("hided");
+                } else {
+                    $(".page")
+                        .last()
+                        .removeClass("page-menubar-open");
+                    $(".site-menubar")
+                        .last()
+                        .removeClass("site-menubar-open");
+                    $(".hamburger-close")
+                        .last()
+                        .addClass("hided");
+                }
+            },
+         }
+
+    };
+</script>
