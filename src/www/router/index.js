@@ -14,7 +14,7 @@ export default new Router({
     { path: "/richlist", component: () => import("../views/richlist/index.vue") },
     { path: "/masternodes", component: () => import("../views/masternodes/index.vue") },
     { path: "/movement", component: () => import("../views/movement/index.vue") },
-    { path: "/address/:id?", component: () => import("../views/explorer/address.vue") },
+    { path: "/address/:id?", component: () => import("../views/wallets/address.vue") },
     { path: "/wallets", component: () => import("../views/wallets/index.vue") },
     { path: "*", component: () => import("../views/404.vue") },
 

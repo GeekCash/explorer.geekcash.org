@@ -29,9 +29,9 @@
                             <ul class="nav navbar-toolbar float-right navbar-right navbar-toolbar-right">
                                 <li class="nav-item">
                                     <form class="form-inline">
-                                        <input class="form-control" id="navSearch" type="search" placeholder="You may enter a block height, block hash, tx hash or address."
-                                            aria-label="Search">
-                                        <button type="submit" class="btn navbutton">
+                                        <input class="form-control" v-model="search" id="navSearch" type="search" placeholder="You may enter a block hash, tx hash or address."
+                                            aria-label="Search" >
+                                        <button type="button" class="btn navbutton" @click="Search">
                                             <i class="fa fa-search" aria-hidden="true"></i>
                                         </button>
                                     </form>
@@ -89,6 +89,11 @@
 
 <script>
     export default {
+        data() {
+            return{
+                search:""
+            }
+        },
         methods: {
             toggleMenubar() {
                 this.menubarOpen = !this.menubarOpen;
@@ -114,6 +119,24 @@
                         .addClass("hided");
                 }
             },
+            Search(){
+               this.$store.dispatch("SEARCH",{id: this.search}).then(res=>{ 
+                    switch(res) {
+                        case "BLOCK":
+                            this.$router.push(`/block/${this.search}`)
+                        break;
+                         case "ADDRESS":
+                          this.$router.push(`/address/${this.search}`)
+                        break;
+                         case "TX":
+                         this.$router.push(`/tx/${this.search}`)
+                        break;
+                         default:
+                         console.log(res)
+                        break;
+                    }
+                })
+            }
          }
 
     };

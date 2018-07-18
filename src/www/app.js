@@ -11,7 +11,11 @@ import NProgress from 'vue-nprogress';
 
 import VueChartkick from 'vue-chartkick';
 import Chart from 'chart.js';
-import Moment from 'vue-moment'
+import Moment from 'vue-moment';
+import _ from 'mix-utils';
+
+
+Vue.set(Vue.prototype, '_', _ );
 Vue.use(Moment);
 Vue.use(VueChartkick, {adapter: Chart})
 

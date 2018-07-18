@@ -120,6 +120,7 @@
     import { mapGetters } from "vuex";
 
     export default {
+        
         components: {
             "layout": Layout
         },
@@ -133,7 +134,6 @@
         methods: {
             TXInfo() {
                 if (this.$route.params.id) {
-                    console.log(this.$route.params.id);
                     this.$store.dispatch("TX_INFO", { id: this.$route.params.id });
                 }
             },

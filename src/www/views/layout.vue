@@ -35,10 +35,10 @@
         <div class="col-xl-3 col-md-6 info-panel">
             <div class="panel text-center">
                 <div class="panel-heading">
-                    <h3 class="panel-title">BTC Price</h3>
+                    <h3 class="panel-title">Masternodes</h3>
                 </div>
                 <div class="panel-body">
-                    <span class="label font-weight-400">0.00000000</span>
+                    <span class="label font-weight-400">{{overview.masternodes}}</span>
                 </div>
             </div>
         </div>
