@@ -330,12 +330,10 @@ module.exports = function (env) {
 
             },
             {
-              module: 'fontawesome',
-              entry: {
-                type: 'css',
-                path: '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
-              }
-
+              module: 'fonts',
+              entry: [                
+                '//l.allcdn.org/fa/v5.0.13/css/all.min.css'
+              ],
             },
 
           ]

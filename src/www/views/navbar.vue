@@ -1,6 +1,6 @@
 <template>
     <div class="main-nav">
-        <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse bg-indigo-600" role="navigation">
+        <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse bg-purple-600" role="navigation">
 
             <div class="navbar-header">
                 <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left unfolded hided" data-toggle="menubar"
@@ -13,9 +13,11 @@
                     <i class="icon wb-more-horizontal" aria-hidden="true"></i>
                 </button>
                 <div class="navbar-brand navbar-brand-center">
-                    <a href="/">
-                        <img class="navbar-brand-logo" src="../favicon/logo-w.png" title="geekcash">
-                    </a>
+                    <router-link to="/">
+                        <img class="navbar-brand-logo" src="/www/favicon/logo-w.png" title="geekcash">
+                       
+                    </router-link>
+                    <span class="badge badge-pill badge-danger up float-right">beta</span>
                 </div>
 
 
@@ -49,33 +51,33 @@
                 <ul class="site-menu" data-plugin="menu">
                     <li class="site-menu-item">
                         <router-link to="/" class="nav-link">
-                            <i aria-hidden="true" class="fa fa-search site-menu-icon"></i>
+                            <i aria-hidden="true" class="far fa-search site-menu-icon"></i>
                             <span class="site-menu-title">Explorer</span>
                         </router-link>
                     </li>
                     <li class="site-menu-item">
                         <router-link to="/movement" class="nav-link">
-                            <i aria-hidden="true" class="fa fa-money site-menu-icon"></i>
+                            <i aria-hidden="true" class="far fa-exchange site-menu-icon"></i>
                             <span class="site-menu-title">Movement</span>
                         </router-link>
                     </li>
 
                     <li class="site-menu-item">
                         <router-link to="/wallets" class="nav-link">
-                            <i aria-hidden="true" class="fa fa-info site-menu-icon"></i>
+                            <i aria-hidden="true" class="far fa-wallet site-menu-icon"></i>
                             <span class="site-menu-title">Wallets</span>
                         </router-link>
                     </li>
 
                     <li class="site-menu-item">
                         <router-link to="/masternodes" class="nav-link">
-                            <i aria-hidden="true" class="fa fa-connectdevelop site-menu-icon"></i>
+                            <i aria-hidden="true" class="fab fa-connectdevelop site-menu-icon"></i>
                             <span class="site-menu-title">Masternodes</span>
                         </router-link>
                     </li>
                     <li class="site-menu-item">
                         <router-link to="/richlist" class="nav-link">
-                            <i aria-hidden="true" class="fa fa-btc site-menu-icon"></i>
+                            <i aria-hidden="true" class="far fa-chart-line site-menu-icon"></i>
                             <span class="site-menu-title">Top 100</span>
                         </router-link>
                     </li>

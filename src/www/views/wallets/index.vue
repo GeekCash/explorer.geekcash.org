@@ -13,13 +13,17 @@
                         :limit=15>
 
                         <mix-table-column data-field="_id"  label="Payee" type="slot"  target="Payee"  width="30%"></mix-table-column>
-                        <mix-table-column data-field="sent" label="Total Sent (GEEK)" type="slot"     target="sent"  width="25%"></mix-table-column>
-                        <mix-table-column data-field="rec" label="Total Received (GEEK)" type="slot"  target="rec"  width="25%" ></mix-table-column>
                         <mix-table-column data-field="bl"  label="Balance (GEEK)" type="slot" target="bl" width="25%"></mix-table-column>
+                        <mix-table-column data-field="sent" label="Sent (GEEK)" type="slot"     target="sent"  width="25%"></mix-table-column>
+                        <mix-table-column data-field="rec" label="Received (GEEK)" type="slot"  target="rec"  width="25%" ></mix-table-column>                      
 
 
                         <template slot="Payee" slot-scope="props">
                             <router-link :to="'/address/'+ props.row._id">{{props.value}}</router-link>
+                        </template>
+
+                        <template slot="bl" slot-scope="props">
+                            <span>{{_.numberFormat(props.value, 2)}}</span>
                         </template>
 
                         <template slot="sent" slot-scope="props">
@@ -30,9 +34,7 @@
                             <span>{{_.numberFormat(props.value, 2)}}</span>
                         </template>
 
-                        <template slot="bl" slot-scope="props">
-                            <span>{{_.numberFormat(props.value, 2)}}</span>
-                        </template>
+                     
 
                     </mix-table>
 

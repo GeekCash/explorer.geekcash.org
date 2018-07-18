@@ -303,3 +303,11 @@ a:link {
  }
 }
 
+.navbar-brand{
+  position: relative;
+}
+
+.site-navbar .badge-pill.up {
+  top: -50px;
+  
+}

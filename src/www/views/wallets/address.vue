@@ -40,7 +40,7 @@
                         </header>
                         <div class="table-responsive">
                             <mix-table :data="data" css="mix-table table table-hover table-striped table-bordered text-center" ref="mixtable" @mixtable:fetch="trfetch"
-                                :limit=12 :search="search">
+                                :limit=12 >
 
                                 <mix-table-column data-field="tt" label="Timestamp" type="slot" width="25%" class="text-center" target="tt"></mix-table-column>
                                 <mix-table-column data-field="tx" label="Hash" type="slot" target="Hash"  class="text-center" width="55%"></mix-table-column>
@@ -103,6 +103,7 @@
                 }
             },
             trfetch(params) {
+                params.search =  this.$route.params.id;
                 this.$store.dispatch("TRANSACTION_FETCH", params);
             },
             timestamp(val) {
