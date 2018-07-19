@@ -56,7 +56,7 @@
                                 </template>
 
                                 <template slot="tp" slot-scope="props">
-                                        <span v-if="props.value == 0" class="badge badge-success font-weight-100">IN</span>
+                                        <span v-if="props.value == 1" class="badge badge-success font-weight-100">IN</span>
                                         <span v-else class="badge badge-warning font-weight-100">OUT</span>
                                 </template>
 
@@ -82,11 +82,6 @@
     import moment from 'moment';
 
     export default {
-        data() {
-            return {
-                search: this.$route.params.id
-            }
-        },
         components: {
             "layout": Layout
         },

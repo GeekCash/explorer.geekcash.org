@@ -141,10 +141,17 @@ a:link {
   border-color: #3f3f5b;
   color: #fff;
 }
+.site-menu-title {
+  font-size: 15px;
+  font-weight: 400;
+}
 
 .panel > .panel-heading h3 {
   background: #1e1e2b;
   color: #a6a6c1;
+  font-size: 15px;
+  padding: 15px;
+  font-weight: 400;
 }
 .info-panel .panel-body {
   background: #2a2a3d;
@@ -154,7 +161,7 @@ a:link {
 }
 
 .panel-heading+.panel-body {
-  padding-top: 10px;
+  padding: 15px;
 }
 
 .table {
@@ -298,6 +305,9 @@ a:link {
     background-color: #20202f;
     height: 0px;
   }
+  .site-navbar .navbar-header .navbar-brand {
+    margin: 0 -50px;
+   }
   .mix-table-footer {
     float: left;
  }

@@ -6,13 +6,13 @@
             <div class="panel">
                 <header class="panel-heading">
                     <div class="panel-actions"></div>
-                    <h3 class="panel-title">Latest Transactions</h3>
+                    <h3 class="panel-title">Wallets</h3>
                 </header>
                 <div class="panel-body table-responsive">
                     <mix-table :data="data" css="table table-hover table-striped table-bordered" ref="mixtable" @mixtable:fetch="walletsfetch"
                         :limit=15>
 
-                        <mix-table-column data-field="_id"  label="Payee" type="slot"  target="Payee"  width="30%"></mix-table-column>
+                        <mix-table-column data-field="_id"  label="Address" type="slot"  target="Payee"  width="30%"></mix-table-column>
                         <mix-table-column data-field="bl"  label="Balance (GEEK)" type="slot" target="bl" width="25%"></mix-table-column>
                         <mix-table-column data-field="sent" label="Sent (GEEK)" type="slot"     target="sent"  width="25%"></mix-table-column>
                         <mix-table-column data-field="rec" label="Received (GEEK)" type="slot"  target="rec"  width="25%" ></mix-table-column>                      

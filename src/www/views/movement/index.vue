@@ -63,6 +63,16 @@
                     data: "tx",
                 })
             },
+
+            mounted() {
+              var _this = this;
+                    setInterval(function () {
+                        if (_this.data.page == 1) {
+                            _this.$store.dispatch("TX_FETCH", {page: 1, offset: 0, pageSize: 15, limit: 15, search: ""});
+                        }
+                    }, 60000);
+                    
+             },
             methods: {
                 txfetch(params) { 
                     this.$store.dispatch("TX_FETCH", params);

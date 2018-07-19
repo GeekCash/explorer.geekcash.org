@@ -8,7 +8,7 @@
                     <h3 class="panel-title">Network</h3>
                 </div>
                 <div class="panel-body">
-                    <span class="label font-weight-400">{{HashRateString(overview.hashrate)}}H</span>
+                    <span class="label font-weight-400">{{_.toKb(overview.hashrate ,2)}}H</span>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
                     <h3 class="panel-title">Difficulty</h3>
                 </div>
                 <div class="panel-body">
-                    <span class="label font-weight-400">{{difficultyformat(overview.difficulty)}}</span>
+                    <span class="label font-weight-400">{{_.numberFormat(overview.difficulty,6)}}</span>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                     <h3 class="panel-title">Coin Supply (GEEK)</h3>
                 </div>
                 <div class="panel-body">
-                    <span class="label font-weight-400">{{supplyformat(overview.supply)}}</span>
+                    <span class="label font-weight-400">{{_.numberFormat(overview.supply, 2)}}</span>
                 </div>
             </div>
         </div>
@@ -50,7 +50,6 @@
 <script>
     
     import { mapGetters } from "vuex";
-    import _ from "mix-utils";
 
     export default {
            computed: {
@@ -61,23 +60,20 @@
             methods: {
                 overviewfech() { 
                   this.$store.dispatch("OVERVIEW")
-                },
-                HashRateString(val){
-                   return  _.toKb(val,2);
-                },
-                difficultyformat(number) {
-                     return _.numberFormat(number, 6);
-                },
-                supplyformat(number){
-                     return _.numberFormat(number, 2);
-                },
+                }
             },
 
             created() {
                this.overviewfech();
             },
+            mounted() {
+             var _this = this;
+                    setInterval(function () {
+                         _this.$store.dispatch("OVERVIEW")
+                    }, 60000);
 
-            watch: {
+             },
+              watch: {
                 $route: "overviewfech"
             },
         };

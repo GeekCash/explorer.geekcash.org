@@ -70,6 +70,7 @@ export default {
             state.addressinfo = data;
         },
         MN_FETCH_SUCCESS(state, data) {
+            console.log(data);
             state.mnfetch = data;
         },
         WALLETS_FETCH_SUCCESS(state, data) {
@@ -135,13 +136,22 @@ export default {
         datawallets: state => state.datawallets,
         transactionfetch : state => state.transactionfetch,
         walletChar: state => {
-            return [
-                [" Top 1-25", state.char.top25.percent],
-                [" Top 26-50", state.char.top50.percent],
-                [" Top 51-75", state.char.top75.percent],
-                [" Top 76-100", state.char.top100.percent],
-                [" Other", state.char.other.percent]
-            ]
+            return {
+                type: 'pie',
+                name: 'Total',
+                data: [
+                    ['Top 1-25', state.char.top25.percent],
+                    ['Top 26-50', state.char.top50.percent],
+                    {
+                        name: 'Top 51-75',
+                        y: state.char.top75.percent,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['Top 76-100', state.char.top100.percent],
+                    ['Others', state.char.other.percent]
+                ]
+            }
         },
         sumCharData: state => state.char,
     },

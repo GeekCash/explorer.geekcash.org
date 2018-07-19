@@ -30,13 +30,13 @@
                         <div class="col-lg-7 col-md-5 hidden-sm">
                             <ul class="nav navbar-toolbar float-right navbar-right navbar-toolbar-right">
                                 <li class="nav-item">
-                                    <form class="form-inline">
+                                    <div class="form-inline">
                                         <input class="form-control" v-model="search" id="navSearch" type="search" placeholder="You may enter a block hash, tx hash or address."
-                                            aria-label="Search" >
-                                        <button type="button" class="btn navbutton" @click="Search">
+                                            aria-label="Search" @keyup.13="Search">
+                                        <button type="button"   @click="Search" class="btn navbutton">
                                             <i class="fa fa-search" aria-hidden="true"></i>
                                         </button>
-                                    </form>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -122,6 +122,7 @@
                 }
             },
             Search(){
+                console.log(this.search);
                this.$store.dispatch("SEARCH",{id: this.search}).then(res=>{ 
                     switch(res) {
                         case "BLOCK":
