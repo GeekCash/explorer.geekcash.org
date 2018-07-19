@@ -48,34 +48,37 @@
 
 
 <script>
-    
+
     import { mapGetters } from "vuex";
 
     export default {
-           computed: {
+
+
+
+        computed: {
             ...mapGetters({
                 overview: "overview"
-                })
-            },
-            methods: {
-                overviewfech() { 
-                  this.$store.dispatch("OVERVIEW")
-                }
-            },
+            })
+        },
+        methods: {
+            overviewfech() {
+                this.$store.dispatch("OVERVIEW")
+            }
+        },
 
-            created() {
-               this.overviewfech();
-            },
-            mounted() {
-             var _this = this;
-                    setInterval(function () {
-                         _this.$store.dispatch("OVERVIEW")
-                    }, 60000);
 
-             },
-              watch: {
-                $route: "overviewfech"
-            },
-        };
-    </script>
+        mounted() {
+            var _this = this;
 
+            clearInterval(this.t);
+
+            this.$store.dispatch("OVERVIEW");
+
+            this.t = setInterval(function () {
+                _this.$store.dispatch("OVERVIEW")
+            }, 60000);
+
+        }
+
+    };
+</script>

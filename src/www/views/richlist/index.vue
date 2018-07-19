@@ -164,9 +164,7 @@ export default {
         }),
     },
     methods: {
-        walletsfetch() {
-            this.$store.dispatch("WALLETS_FETCH", { limit: 100 })
-        },
+       
         caculator(val) {
             if (this.overview.supply > 0 && this.data.rows.length > 0) {
                 this.$store.dispatch("CACULATOR_WALLET");
@@ -176,10 +174,10 @@ export default {
         },
     },
     created() {
-        this.walletsfetch();
+        this.$store.dispatch("WALLETS_FETCH", { limit: 100 })
     },
     watch: {
-        $route: "walletsfetch",
+       
         overview: "caculator",
         data: "caculator"
     },
