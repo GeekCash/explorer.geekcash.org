@@ -73,17 +73,11 @@ import { mapGetters } from "vuex";
 import VueHighcharts from "vue2-highcharts";
 export default {
     data() {
-        var $this = this;
         return {
             Options: {
                 colors: ['#d9534f','#5cb85c','#428bca', '#2a2c3d', '#cccccc'],
                 chart: {
                     type: 'pie',
-                    options3d: {
-                        enabled: true,
-                        alpha: 45,
-                        beta: 0
-                    },
                     backgroundColor: {
                         linearGradient: {
                             x1: 0,
@@ -131,18 +125,6 @@ export default {
                             color: '#fff'
                         },
                         borderColor: "#1e202d",
-                        marker: {
-                            lineColor: '#fff'
-                        },
-                        boxplot: {
-                            fillColor: '#fff'
-                        },
-                        candlestick: {
-                            lineColor: '#fff'
-                        },
-                        errorbar: {
-                            color: '#fff'
-                        }
                     }
                 },
                 credits: false,
@@ -161,24 +143,21 @@ export default {
             overview: 'overview',
             sumCharData: 'sumCharData',
 
-        }),
+        })
     },
     methods: {
-       
-        caculator(val) {
-            if (this.overview.supply > 0 && this.data.rows.length > 0) {
+        caculator() {
+            setTimeout(() => {
                 this.$store.dispatch("CACULATOR_WALLET");
                 let pieCharts = this.$refs.Charts;
-                 pieCharts.addSeries(this.chartData);
-            }
+                pieCharts.addSeries(this.chartData);
+            }, 500)
         },
     },
     created() {
         this.$store.dispatch("WALLETS_FETCH", { limit: 100 })
     },
     watch: {
-       
-        overview: "caculator",
         data: "caculator"
     },
 };

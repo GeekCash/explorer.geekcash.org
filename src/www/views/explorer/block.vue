@@ -9,41 +9,49 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="row">
-                                <router-link :to="'/block/'+ blkinfo.prv" v-if="blkinfo.prv">
-                                    <span class="fa fa-chevron-left iquidus block-last"></span>
-                                </router-link >
-                                <strong class="hidden-xs">GEEK block: {{blkinfo._id}}</strong>
-                                <router-link  :to="'/block/' + blkinfo.nxt" v-if="blkinfo.nxt">
-                                    <span class="fa fa-chevron-right iquidus block-next"></span>
-                                </router-link>
+                                <div class="col-md-1">
+                                    <router-link :to="'/block/'+ blkinfo.prv" v-if="blkinfo.prv" class="float-left">
+                                        <span class="fa fa-chevron-left iquidus"></span>
+                                    </router-link >
+                                </div>
+                                <div class="col-md-8">
+                                    <strong class="float-left">GEEK block: {{blkinfo._id}}</strong>
+                                </div>
+  
+                                <div class="col-md-3">
+                                    <router-link :to="'/block/' + blkinfo.nxt" v-if="blkinfo.nxt" class="float-right">
+                                        <span class="fa fa-chevron-right iquidus"></span>
+                                    </router-link>
+                                </div>
+
 
                             </div>
                         </div>
                         <div class="table-responsive">
-                        <table class="table table-hover table-bordered dataTable table-striped w-full dtr-inline">
-                            <thead>
-                                <tr>
-                                    <th style="width: 130px">Height</th>
-                                    <th style="width: 350px">Difficulty</th>
-                                    <th style="width: 250px">Confirmations</th>
-                                    <th style="width: 180px">Size (kB)</th>
-                                    <th style="width: 180px">Bits</th>
-                                    <th style="width: 200px">Nonce</th>
-                                    <th >Timestamp</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-danger">
-                                    <td>{{blkinfo.idx}}</td>
-                                    <td>{{blkinfo.diff}}</td>
-                                    <td>{{overview.blocks - blkinfo.idx}}</td>
-                                    <td>{{blkinfo.sz}}</td>
-                                    <td>{{blkinfo.bits}}</td>
-                                    <td>{{blkinfo.n}}</td>
-                                    <td>{{timestamp(blkinfo.tt)}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <table class="table table-hover table-bordered dataTable table-striped w-full dtr-inline">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10%">Height</th>
+                                        <th style="width: 20%">Difficulty</th>
+                                        <th style="width: 10%">Confirmations</th>
+                                        <th style="width: 10%">Size</th>
+                                        <th style="width: 10%">Bits</th>
+                                        <th style="width: 20%">Nonce</th>
+                                        <th style="width: 20%">Timestamp</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-danger">
+                                        <td>{{blkinfo.idx}}</td>
+                                        <td>{{blkinfo.diff}}</td>
+                                        <td>{{overview.blocks - blkinfo.idx}}</td>
+                                        <td>{{_.toKb(blkinfo.sz)}}B</td>
+                                        <td>{{blkinfo.bits}}</td>
+                                        <td>{{blkinfo.n}}</td>
+                                        <td>{{timestamp(blkinfo.tt)}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 

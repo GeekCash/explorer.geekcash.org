@@ -31,7 +31,7 @@
                             <ul class="nav navbar-toolbar float-right navbar-right navbar-toolbar-right">
                                 <li class="nav-item">
                                     <div class="form-inline">
-                                        <input class="form-control" v-model="search" id="navSearch" type="search" placeholder="You may enter a block hash, tx hash or address."
+                                        <input class="form-control" v-model="search" id="navSearch" type="text" placeholder="You may enter a block hash, tx hash or address."
                                             aria-label="Search" @keyup.13="Search">
                                         <button type="button"   @click="Search" class="btn navbutton">
                                             <i class="fa fa-search" aria-hidden="true"></i>
@@ -81,8 +81,11 @@
                             <span class="site-menu-title">Top 100</span>
                         </router-link>
                     </li>
-  
-                </ul>
+                    <div class="copyright fixed-bottom">
+                          ©
+                        <a href="https://geekcash.org/" target="_blank">GeekCash</a></div>
+
+                    </ul>
             </div>
         </div>
 
@@ -122,17 +125,17 @@
                 }
             },
             Search(){
-                console.log(this.search);
-               this.$store.dispatch("SEARCH",{id: this.search}).then(res=>{ 
+                var _search = this.search.replace(/\s+/g, '');
+               this.$store.dispatch("SEARCH",{id: _search}).then(res=>{ 
                     switch(res) {
                         case "BLOCK":
-                            this.$router.push(`/block/${this.search}`)
+                            this.$router.push(`/block/${_search}`)
                         break;
                          case "ADDRESS":
-                          this.$router.push(`/address/${this.search}`)
+                          this.$router.push(`/address/${_search}`)
                         break;
                          case "TX":
-                         this.$router.push(`/tx/${this.search}`)
+                         this.$router.push(`/tx/${_search}`)
                         break;
                          default:
                          console.log(res)

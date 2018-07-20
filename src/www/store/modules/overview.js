@@ -70,7 +70,6 @@ export default {
             state.addressinfo = data;
         },
         MN_FETCH_SUCCESS(state, data) {
-            console.log(data);
             state.mnfetch = data;
         },
         WALLETS_FETCH_SUCCESS(state, data) {
