@@ -13,7 +13,7 @@ export default {
             total: 0,
         },
         char: {
-            top25: {
+            top10: {
                 value: 0,
                 percent: 0
             },
@@ -90,8 +90,8 @@ export default {
                 count++;
                 wallet.percent = (wallet.bl / supply) * 100
                 sum += wallet.bl
-                if (count == 25) {
-                    state.char.top25 = {
+                if (count == 10) {
+                    state.char.top10 = {
                         value: sum,
                         percent: (sum / supply) * 100
                     }
@@ -113,7 +113,7 @@ export default {
                         value: sum,
                         percent: (sum / supply) * 100
                     }
-                    var otherValue = supply - (state.char.top25.value + state.char.top50.value + state.char.top75.value + state.char.top100.value)
+                    var otherValue = supply - (state.char.top10.value + state.char.top50.value + state.char.top75.value + state.char.top100.value)
                     state.char.other = {
                         value: otherValue,
                         percent: (otherValue / supply) * 100
@@ -139,8 +139,8 @@ export default {
                 type: 'pie',
                 name: 'Total',
                 data: [
-                    ['Top 1-25', state.char.top25.percent],
-                    ['Top 26-50', state.char.top50.percent],
+                    ['Top 1-10', state.char.top10.percent],
+                    ['Top 11-50', state.char.top50.percent],
                     {
                         name: 'Top 51-75',
                         y: state.char.top75.percent,

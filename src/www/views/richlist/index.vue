@@ -39,10 +39,11 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr v-if="data" v-for="(address, index) in data.rows">
+                                                        <tr  v-if="data" v-for="(address, index) in data.rows">
                                                             <td class="text-center">{{index +1}}</td>
                                                             <td>
                                                                 <router-link :to="'/address/' + address._id">{{address._id}}</router-link>
+                                                                <label style="margin-left:15px;" class="badge badge-table badge-info">{{walletfounder(address._id, wallet)}}</label>
                                                             </td>
                                                             <td>{{_.numberFormat(address.bl)}}</td>
                                                             <td class="text-center">{{_.numberFormat((address.bl / overview.supply) * 100, 2)}}</td>
@@ -68,14 +69,16 @@
 </template>
 
 <script>
+import config from '../../config';
 import Layout from "../layout.vue";
 import { mapGetters } from "vuex";
 import VueHighcharts from "vue2-highcharts";
 export default {
     data() {
         return {
+            wallet: "",
             Options: {
-                colors: ['#d9534f','#5cb85c','#428bca', '#2a2c3d', '#cccccc'],
+                colors: ['#7bb5ec','#d9534e','#428bca', '#2a2c3d', '#cccccc'],
                 chart: {
                     type: 'pie',
                     backgroundColor: {
@@ -153,9 +156,15 @@ export default {
                 pieCharts.addSeries(this.chartData);
             }, 500)
         },
+        walletfounder(_id, wallet) {
+                var  data = wallet.find((each, index) => each.id == _id);
+                
+                 return data?data.val: "";
+        },
     },
     created() {
-        this.$store.dispatch("WALLETS_FETCH", { limit: 100 })
+        this.$store.dispatch("WALLETS_FETCH", { limit: 100 }),
+        this.wallet = config.wallet;
     },
     watch: {
         data: "caculator"
