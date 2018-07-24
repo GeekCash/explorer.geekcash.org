@@ -39,12 +39,18 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr  v-if="data" v-for="(address, index) in data.rows">
+                                                        <tr v-if="data" v-for="(address, index) in data.rows">
                                                             <td class="text-center">{{index +1}}</td>
-                                                            <td>
+                                                            
+                                                            <td v-if="wallet[address._id]">
                                                                 <router-link :to="'/address/' + address._id">{{address._id}}</router-link>
-                                                                <label style="margin-left:15px;" class="badge badge-table badge-info">{{walletfounder(address._id, wallet)}}</label>
+                                                                <label style="margin-left:15px;" class="badge badge-table badge-info">{{wallet[address._id]}}</label>
                                                             </td>
+
+                                                            <td v-else>
+                                                            <router-link :to="'/address/' + address._id">{{address._id}}</router-link>
+                                                            </td>
+
                                                             <td>{{_.numberFormat(address.bl)}}</td>
                                                             <td class="text-center">{{_.numberFormat((address.bl / overview.supply) * 100, 2)}}</td>
                                                         </tr>
@@ -155,11 +161,6 @@ export default {
                 let pieCharts = this.$refs.Charts;
                 pieCharts.addSeries(this.chartData);
             }, 500)
-        },
-        walletfounder(_id, wallet) {
-                var  data = wallet.find((each, index) => each.id == _id);
-                
-                 return data?data.val: "";
         },
     },
     created() {

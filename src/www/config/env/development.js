@@ -8,10 +8,10 @@ export default{
           high_flag: 5000
     },
     nethash_units: "M",
-    wallet: [
-          {id: 'GVhg8uNbKmARKRLExsCcVFG2jjD9Cza18Z', val: "founder's wallet"},
-          {id: 'GWK1StFJG25o4tLczgpCo4V5i8JgUwCUEm', val: "bounty wallet" },
-          {id: 'GcNtmy2qt262sh7Mk7CUqdVDNtvmoYDS43', val: "bittrex" }
-      ]
+    wallet: {
+           GVhg8uNbKmARKRLExsCcVFG2jjD9Cza18Z: "founder's wallet",
+           GWK1StFJG25o4tLczgpCo4V5i8JgUwCUEm: "bounty wallet",
+           GcNtmy2qt262sh7Mk7CUqdVDNtvmoYDS43: "bittrex"
+    }
 
   }
