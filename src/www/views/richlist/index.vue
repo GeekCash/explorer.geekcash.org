@@ -3,8 +3,6 @@
 <div class="page">
     <div class="page-content container-fluid">
 
-        <layout></layout>
-
         <div class="row">
 
             <div class="col-lg-12 col-md-12 col-xs-12">
@@ -72,7 +70,6 @@
 
 <script>
 import config from '../../config';
-import Layout from "../layout.vue";
 import { mapGetters } from "vuex";
 import VueHighcharts from "vue2-highcharts";
 export default {
@@ -138,7 +135,6 @@ export default {
         }
     },
     components: {
-        "layout": Layout,
          VueHighcharts
     },
     computed: {

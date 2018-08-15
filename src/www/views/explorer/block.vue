@@ -3,7 +3,6 @@
     <!-- Page -->
     <div class="page">
         <div class="page-content container-fluid">
-            <layout></layout>
             <div class="panel">
                 <div class="col-xs-12 col-md-12">
                     <div class="panel panel-default">
@@ -98,12 +97,8 @@
 <script>
     import moment from 'moment';
     import { mapGetters } from "vuex";
-    import Layout from "../layout.vue";
 
     export default {
-        components: {
-            "layout": Layout
-        },
         computed: {
             ...mapGetters({
                 blkinfo: "binfo",

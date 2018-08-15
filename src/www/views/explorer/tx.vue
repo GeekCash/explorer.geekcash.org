@@ -2,9 +2,6 @@
     <!-- Page -->
     <div class="page">
         <div class="page-content container-fluid">
-            <layout></layout>
-
-
             <div class="panel">
                 <div class="col-xs-12 col-md-12">
                     <div class="panel panel-default">
@@ -117,16 +114,9 @@
 
 
 <script>
-    import Layout from "../layout.vue";
-
     import { mapGetters } from "vuex";
 
     export default {
-
-        components: {
-            "layout": Layout
-        },
-
         data: function () {
             return {
                 t: null,
@@ -149,16 +139,7 @@
         },
 
         mounted() {
-            var _this = this;
             this.TXInfo();
-            var t = setInterval(() => {
-                if (_this.txinfo.bid) {
-                    clearInterval(t);
-                } else {
-                    _this.TXInfo();
-                }
-            }, 5000);
-
         },
 
         watch: {

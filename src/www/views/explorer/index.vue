@@ -1,7 +1,6 @@
 <template>
     <div class="page">
         <div class="page-content container-fluid">
-            <layout></layout>
             <div class="panel">
                 <header class="panel-heading">
                     <div class="panel-actions"></div>
@@ -44,16 +43,12 @@
 
 <script>
    
-    import Layout from "../layout.vue";
     import MixTable from "v-mix-table";
     import {
         mapGetters
     } from "vuex";
 
     export default {
-        components: {
-            "layout": Layout
-        },
         computed: {
             ...mapGetters({
                 data: "tx",
