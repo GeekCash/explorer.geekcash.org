@@ -17,7 +17,7 @@
                         <img class="navbar-brand-logo" src="/www/favicon/logo-w.png" title="geekcash">
                        
                     </router-link>
-                    <span class="badge badge-pill badge-danger up float-right">beta</span>
+                    <span class="badge badge-pill badge-danger up float-right">beta2</span>
                 </div>
 
 
@@ -63,9 +63,9 @@
                     </li>
 
                     <li class="site-menu-item">
-                        <router-link to="/wallets" class="nav-link">
+                        <router-link to="/addresses" class="nav-link">
                             <i aria-hidden="true" class="far fa-wallet site-menu-icon"></i>
-                            <span class="site-menu-title">Wallets</span>
+                            <span class="site-menu-title">Addresses</span>
                         </router-link>
                     </li>
 

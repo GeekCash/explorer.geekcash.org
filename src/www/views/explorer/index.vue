@@ -29,10 +29,10 @@
                             <span>{{props.value.length}}</span>
                         </template>
 
-                        <template slot="val" slot-scope="props">{{_.numberFormat(props.value, 2)}}</template>
+                        <template slot="val" slot-scope="props">{{_.numberFormat(props.value, 8)}}</template>
 
                         <template slot="time" slot-scope="props">
-                            <span class="text-center">{{timestamp(props.value)}}</span>
+                            <span class="text-center">{{ props.value | moment("YYYY-MM-DD h:mm:ss A")}}</span>
                         </template>
                     </mix-table>
 
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-    import moment from 'moment';
+   
     import Layout from "../layout.vue";
     import MixTable from "v-mix-table";
     import {
@@ -59,18 +59,16 @@
                 data: "tx",
             })
         },
-        mounted() {
+        // mounted() {
 
-            this.$store.dispatch("TX_FETCH", { page: 1, offset: 0, pageSize: 15, limit: 15, search: "" });
+        //     this.$store.dispatch("TX_FETCH", { page: 1, offset: 0, pageSize: 15, limit: 15, search: "" });
 
-        },
+        // },
         methods: {
             txfetch(params) {
                 this.$store.dispatch("TX_FETCH", params);
             },
-            timestamp(val) {
-                return moment.unix(val).format('ddd ,DD MMM YYYY HH:mm:ss');
-            },
+            
         },
 
     };

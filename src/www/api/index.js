@@ -1,7 +1,11 @@
+import Vue from "vue";
 import axios from "axios";
 import config from '../config';
 
 const API = axios.create({ baseURL: config.BASE_API_URL });
+
+Vue.axios = API;
+
 
 export default {
   put(url, data) {

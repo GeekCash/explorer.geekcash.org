@@ -1,5 +1,3 @@
-var _ = require("mix-utils"),
-  fs = require("fs");
 
   
 module.exports = [

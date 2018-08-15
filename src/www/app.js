@@ -6,19 +6,19 @@ import store from "./store";
 import router from "./router";
 import { sync } from "vuex-router-sync";
 import Validate from "vee-validate";
-import NoSSR from "vue-no-ssr";
+
 import NProgress from 'vue-nprogress';
 import Moment from 'vue-moment';
-import _ from 'mix-utils';
+import _ from 'mix-dash';
 
+Vue.use(_);
 
-Vue.set(Vue.prototype, '_', _ );
 Vue.use(Moment);
 
 Vue.use(Validate);
 Vue.use(NProgress);
 
-Vue.component('no-ssr', NoSSR);
+
 const nprogress = new NProgress();
 
 // sync the router with the vuex store.

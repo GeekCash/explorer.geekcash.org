@@ -295,12 +295,12 @@ module.exports = function (env) {
             },
             {
               module: 'boostrap',
-              entry: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js'
+              entry: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js'
             },
             {
               module: 'vue',
               global: 'Vue',
-              entry: 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js'
+              entry: 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'
             },
             {
               module: 'vue-router',
@@ -319,12 +319,18 @@ module.exports = function (env) {
               entry: 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js'
             },
             {
+              module: 'lodash',
+              global: '_',
+              entry: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js'
+            },
+            
+            {
 
               module: 'remark',
               entry: [
                 '//l.allcdn.org/remark/v4.1/bootstrap.min.css',
                 '//l.allcdn.org/remark/v4.1/bootstrap-extend.min.css',
-                '//l.allcdn.org/remark/v4.1/site.min.css',
+                '//l.allcdn.org/remark/v4.1/iconbar/site.min.css',
                 '//l.allcdn.org/remark/v4.1/skins/green.min.css'
               ],
 

@@ -42,14 +42,10 @@
                                                         <tr v-if="data" v-for="(address, index) in data.rows">
                                                             <td class="text-center">{{index +1}}</td>
                                                             
-                                                            <td v-if="wallet[address._id]">
+                                                            <td>
                                                                 <router-link :to="'/address/' + address._id">{{address._id}}</router-link>
-                                                                <label style="margin-left:15px;" class="badge badge-table badge-info">{{wallet[address._id]}}</label>
-                                                            </td>
-
-                                                            <td v-else>
-                                                            <router-link :to="'/address/' + address._id">{{address._id}}</router-link>
-                                                            </td>
+                                                                <label v-if="wallet[address._id]" style="margin-left:15px;" class="badge badge-table badge-info">{{wallet[address._id]}}</label>
+                                                            </td>                                                           
 
                                                             <td>{{_.numberFormat(address.bl)}}</td>
                                                             <td class="text-center">{{_.numberFormat((address.bl / overview.supply) * 100, 2)}}</td>

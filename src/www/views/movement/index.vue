@@ -19,7 +19,7 @@
 
 
                         <template slot="time" slot-scope="props">
-                            <span>{{timestamp(props.value)}}</span>
+                            <span>{{props.value | moment("YYYY-MM-DD h:mm:ss A")}}</span>
                         </template>
 
                         <template slot="txid" slot-scope="props">
@@ -27,9 +27,9 @@
                         </template>
 
                         <template slot="val" slot-scope="props">
-                            <span v-if="props.value > settings.high_flag" class="badge badge-table badge-danger">{{props.value}}</span>
-                            <span v-else-if="props.value > settings.low_flag" class="badge badge-table badge-warning">{{props.value}}</span>
-                            <span v-else class="badge badge-table badge-success">{{props.value}}</span>
+                            <span v-if="props.value > settings.high" class="text-success">{{ _.numberFormat(props.value,8)}}</span>
+                            <span v-else-if="props.value > settings.mid" class="text-primary">{{_.numberFormat(props.value,8)}}</span>
+                            <span v-else class="text-muted">{{_.numberFormat(props.value,8)}}</span>
                         </template>
                     </mix-table>
 
@@ -43,7 +43,7 @@
 
 
 <script>
-    import moment from 'moment';
+
     import config from '../../config';
     import Layout from "../layout.vue";
     import MixTable from "v-mix-table";
@@ -64,18 +64,16 @@
             })
         },
 
-        mounted() {
+        // mounted() {
 
-            this.$store.dispatch("TX_FETCH", { page: 1, offset: 0, pageSize: 15, limit: 15 });
+        //     this.$store.dispatch("TX_FETCH", { page: 1, offset: 0, pageSize: 15, limit: 15 });
 
-        },
+        // },
         methods: {
             txfetch(params) {
                 this.$store.dispatch("TX_FETCH", params);
-            },
-            timestamp(val) {
-                return moment.unix(val).format('Do MMM YYYY HH:mm:ss');
             }
+
         },
         created() {
             this.settings = config.movement;

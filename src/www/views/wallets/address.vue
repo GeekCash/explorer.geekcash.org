@@ -48,7 +48,7 @@
                                 <mix-table-column data-field="val" label="Amount(GEEK)" type="slot"   class="text-center" width="15%" target="val"></mix-table-column>
 
                                 <template slot="tt" slot-scope="props">
-                                    <span>{{timestamp(props.value)}}</span>
+                                    <span>{{ props.value | moment("YYYY-MM-DD h:mm:ss A")}}</span>
                                 </template>
 
                                 <template slot="Hash" slot-scope="props">
@@ -79,7 +79,7 @@
     import {  mapGetters } from "vuex";
     import Layout from "../layout.vue";
     import MixTable from "v-mix-table";
-    import moment from 'moment';
+
 
     export default {
         components: {
@@ -100,10 +100,8 @@
             trfetch(params) {
                 params.search =  this.$route.params.id;
                 this.$store.dispatch("TRANSACTION_FETCH", params);
-            },
-            timestamp(val) {
-                return  moment.unix(val).format('Do MMM YYYY HH:mm:ss'); 
             }
+           
         },
 
         created() {

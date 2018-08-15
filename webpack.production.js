@@ -10,16 +10,7 @@ module.exports = function () {
     configs.forEach(function(config){
         config.devtool=false;
         config.plugins.push(new CleanWebpackPlugin(['dist/*']));
-        config.plugins.push(new UglifyJSPlugin({
-            uglifyOptions: {
-                warnings: false,
-                beautify: false,
-                compress: true,
-                minimize: true,
-                comments: false
-            }
-          
-        }))
+        
         
     });
 
