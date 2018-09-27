@@ -117,11 +117,7 @@
     import { mapGetters } from "vuex";
 
     export default {
-        data: function () {
-            return {
-                t: null,
-            }
-        },
+       
 
         computed: {
             ...mapGetters({
@@ -139,7 +135,16 @@
         },
 
         mounted() {
+
+            var _this = this;
             this.TXInfo();
+            var t = setInterval(() => {
+                if (_this.txinfo.bid) {
+                    clearInterval(t);
+                } else {
+                    _this.TXInfo();
+                }
+            }, 5000);
         },
 
         watch: {
