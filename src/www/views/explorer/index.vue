@@ -6,18 +6,22 @@
                     <div class="panel-actions"></div>
                     <h3 class="panel-title">Latest Transactions</h3>
                 </header>
-                <div class="panel-body table-responsive">
-                    <mix-table :data="data" css="table table-hover table-striped table-bordered text-center" ref="mixtable" @mixtable:fetch="txfetch"
-                        :limit=15>
+                <div class="panel-body">
+                    <mix-table :data="data" css="table table-hover table-striped table-bordered text-center" ref="mixtable"
+                        @mixtable:fetch="txfetch" :limit=15>
 
-                        <mix-table-column data-field="idx" label="Block" type="slot" target="block" class="text-center" width="111px"></mix-table-column>
-                        <mix-table-column data-field="_id" label="Hash" type="slot" target="Hash" class="text-center" width="707px"></mix-table-column>
-                        <mix-table-column data-field="out" label="Recipients" type="slot" class="text-center" width="75px" target="Recipients"></mix-table-column>
-                        <mix-table-column data-field="val" label="Amount (GEEK)" type="slot" target="val" class="text-center" width="249px"></mix-table-column>
-                        <mix-table-column data-field="tt" label="Timestamp" type="slot" target="time" class="text-center" width="442px"></mix-table-column>
+                        <mix-table-column data-field="idx" label="Block" type="slot" target="block" width="110px"></mix-table-column>
+                        <mix-table-column data-field="_id" label="Hash" type="slot" target="Hash" class="text-center"></mix-table-column>
+                        <mix-table-column data-field="out" label="Recipients" type="slot" class="text-center" width="10%"
+                            target="Recipients"></mix-table-column>
+                        <mix-table-column data-field="val" label="Amount (GEEK)" type="slot" target="val" class="text-center"
+                            width="15%"></mix-table-column>
+                        <mix-table-column data-field="tt" label="Timestamp" type="slot" target="time" class="text-center"
+                            width="20%"></mix-table-column>
 
                         <template slot="block" slot-scope="props">
-                            <router-link :to="'/block/'+ props.row.bid">{{props.value}}</router-link>
+
+                            <router-link class="text-center" :to="'/block/'+ props.row.bid">{{props.value}}</router-link>
                         </template>
 
                         <template slot="Hash" slot-scope="props">
@@ -42,11 +46,9 @@
 </template>
 
 <script>
-   
+
     import MixTable from "v-mix-table";
-    import {
-        mapGetters
-    } from "vuex";
+    import { mapGetters } from "vuex";
 
     export default {
         computed: {
@@ -54,16 +56,22 @@
                 data: "tx",
             })
         },
-        // mounted() {
+        mounted() {
 
-        //     this.$store.dispatch("TX_FETCH", { page: 1, offset: 0, pageSize: 15, limit: 15, search: "" });
+            var _this = this;
+            clearInterval(this.t);         
 
-        // },
+            this.t = setInterval(function () {
+                _this.$refs.mixtable.reload();
+            }, 60000);
+
+
+        },
         methods: {
             txfetch(params) {
                 this.$store.dispatch("TX_FETCH", params);
             },
-            
+
         },
 
     };
