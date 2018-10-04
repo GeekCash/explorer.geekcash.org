@@ -52,6 +52,11 @@
     import { mapGetters } from "vuex";
 
     export default {
+        data: function () {
+            return {
+                timer: null,
+            }
+        },
         computed: {
             ...mapGetters({
                 data: "tx",
@@ -60,10 +65,11 @@
         mounted() {
 
             var _this = this;
-            clearInterval(this.t);
+            clearInterval(_this.timer);
 
-            this.t = setInterval(function () {
-                _this.$refs.mixtable.reload();
+            _this.timer = setInterval(function () {
+                if (_this.$refs.mixtable)
+                    _this.$refs.mixtable.reload();
             }, 60000);
 
 

@@ -76,11 +76,11 @@
         mounted() {
             var _this = this;
 
-            clearInterval(this.t);
+            clearInterval(_this.timer);
 
             this.$store.dispatch("OVERVIEW");
 
-            this.t = setInterval(function () {
+            _this.timer = setInterval(function () {
                 _this.$store.dispatch("OVERVIEW")
             }, 60000);
 

@@ -24,7 +24,7 @@
                                             <i class="fa-spin fal fa-cog"></i> Loading...
                                         </td>
                                         <td v-else>
-                                            {{overview.blocks - txinfo.idx}}
+                                            {{overview.blocks>txinfo.idx?overview.blocks - txinfo.idx:1}}
                                         </td>
                                         <td class="hidden-xs">
                                             <router-link :to="'/block/'+ txinfo.bid">{{txinfo.bid}}</router-link>
@@ -117,7 +117,12 @@
     import { mapGetters } from "vuex";
 
     export default {
-       
+
+        data: function () {
+            return {
+                timer: null,
+            }
+        },
 
         computed: {
             ...mapGetters({
