@@ -17,7 +17,7 @@
                         <img class="navbar-brand-logo" src="/www/favicon/logo-w.png" title="geekcash">
                        
                     </router-link>
-                    <span class="badge badge-pill badge-danger up float-right">beta2</span>
+                    <!-- <span class="badge badge-pill badge-danger up float-right">rc</span> -->
                 </div>
 
 
